@@ -172,16 +172,24 @@ VITE_API_URL=http://localhost:5000/api
 
 ```
 umkm-mapper/
+├── api/
+│   └── [...all].js
 ├── backend/
+│   ├── lib/
+│   │   └── db.js
 │   ├── models/
 │   │   └── UMKM.js
 │   ├── routes/
 │   │   └── umkmRoutes.js
 │   ├── controllers/
 │   │   └── umkmController.js
-│   ├── config/
+│   ├── app.js
+│   ├── mockData.js
+│   ├── seed.js
 │   ├── server.js
+│   ├── test-connection.js
 │   ├── package.json
+│   ├── .env
 │   └── .env.example
 ├── frontend/
 │   ├── src/
@@ -193,11 +201,16 @@ umkm-mapper/
 │   │   │   └── umkmService.js
 │   │   ├── App.jsx
 │   │   └── main.jsx
-│   ├── public/
 │   ├── index.html
 │   ├── vite.config.js
 │   ├── package.json
 │   └── .env.example
+├── DEVELOPMENT.md
+├── README.md
+├── render.yaml
+├── setup.bat
+├── setup.sh
+├── vercel.json
 ├── .github/
 │   └── copilot-instructions.md
 └── package.json

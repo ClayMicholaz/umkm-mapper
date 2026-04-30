@@ -119,13 +119,19 @@ curl http://localhost:5000/api/health
 
 ```
 umkm-mapper/
+├── api/
+│   └── [...all].js             # Vercel serverless API entrypoint
+│
 ├── backend/
+│   ├── lib/
+│   │   └── db.js               # MongoDB connection helper (cached)
 │   ├── controllers/
 │   │   └── umkmController.js   # API handlers
 │   ├── models/
 │   │   └── UMKM.js             # MongoDB schema
 │   ├── routes/
 │   │   └── umkmRoutes.js       # API endpoints
+│   ├── app.js                  # Shared Express app (server + serverless)
 │   ├── mockData.js             # Mock UMKM records
 │   ├── seed.js                 # Seed script for Atlas
 │   ├── server.js               # Express server entry
