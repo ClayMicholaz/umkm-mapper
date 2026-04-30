@@ -69,10 +69,6 @@ const Sidebar = ({
 
   return (
     <div className="sidebar">
-      <div className="sidebar-header">
-        <h2>Filter UMKM</h2>
-      </div>
-
       <div className="sidebar-content">
         {/* Category Filter */}
         <div className="filter-group">
