@@ -5,7 +5,8 @@ import { mockUMKMs } from "./mockData.js";
 
 dotenv.config();
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/umkm-mapper";
+const MONGODB_URI =
+  process.env.MONGODB_URI || "mongodb://localhost:27017/umkm-mapper";
 
 async function seedDatabase() {
   try {
@@ -26,7 +27,9 @@ async function seedDatabase() {
     const allUMKM = await UMKM.find();
     console.log("\n📋 Data in database:");
     allUMKM.forEach((umkm, index) => {
-      console.log(`${index + 1}. ${umkm.name} (${umkm.category}) - ${umkm.city}`);
+      console.log(
+        `${index + 1}. ${umkm.name} (${umkm.category}) - ${umkm.city}`,
+      );
     });
 
     process.exit(0);

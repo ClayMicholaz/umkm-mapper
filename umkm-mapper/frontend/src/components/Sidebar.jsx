@@ -128,7 +128,9 @@ const Sidebar = ({
                     </button>
                   ))
                 ) : (
-                  <div className="city-dropdown-empty">Kota tidak ditemukan</div>
+                  <div className="city-dropdown-empty">
+                    Kota tidak ditemukan
+                  </div>
                 )}
               </div>
             )}

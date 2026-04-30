@@ -7,7 +7,7 @@ const mockUMKMs = [
     description: "Restoran masakan tradisional Indonesia",
     location: {
       type: "Point",
-      coordinates: [106.8270, -6.1753] // Jakarta
+      coordinates: [106.827, -6.1753], // Jakarta
     },
     address: "Jl. Merdeka No. 123",
     city: "Jakarta",
@@ -17,7 +17,7 @@ const mockUMKMs = [
     website: "https://warungmakan.com",
     owner: "Ibu Siti",
     rating: 4.5,
-    reviews: 128
+    reviews: 128,
   },
   {
     _id: "2",
@@ -26,7 +26,7 @@ const mockUMKMs = [
     description: "Bengkel servis dan perbaikan mobil profesional",
     location: {
       type: "Point",
-      coordinates: [106.8360, -6.1850]
+      coordinates: [106.836, -6.185],
     },
     address: "Jl. Sudirman No. 456",
     city: "Jakarta",
@@ -36,7 +36,7 @@ const mockUMKMs = [
     website: "https://bengkeljaya.com",
     owner: "Pak Hendra",
     rating: 4.8,
-    reviews: 256
+    reviews: 256,
   },
   {
     _id: "3",
@@ -45,7 +45,7 @@ const mockUMKMs = [
     description: "Toko penjualan dan service elektronik",
     location: {
       type: "Point",
-      coordinates: [106.8180, -6.1650]
+      coordinates: [106.818, -6.165],
     },
     address: "Jl. Ahmad Yani No. 789",
     city: "Jakarta",
@@ -55,7 +55,7 @@ const mockUMKMs = [
     website: "https://tokoelektronik.com",
     owner: "Budi Santoso",
     rating: 4.3,
-    reviews: 89
+    reviews: 89,
   },
   {
     _id: "4",
@@ -64,7 +64,7 @@ const mockUMKMs = [
     description: "Toko fashion dan pakaian modern",
     location: {
       type: "Point",
-      coordinates: [112.7515, -7.2575] // Surabaya
+      coordinates: [112.7515, -7.2575], // Surabaya
     },
     address: "Jl. Diponegoro No. 100",
     city: "Surabaya",
@@ -74,7 +74,7 @@ const mockUMKMs = [
     website: "https://fashioncantik.com",
     owner: "Nina Putri",
     rating: 4.6,
-    reviews: 145
+    reviews: 145,
   },
   {
     _id: "5",
@@ -83,7 +83,7 @@ const mockUMKMs = [
     description: "Pengrajin batik tradisional Indonesia",
     location: {
       type: "Point",
-      coordinates: [110.4064, -7.5505] // Yogyakarta
+      coordinates: [110.4064, -7.5505], // Yogyakarta
     },
     address: "Jl. Malioboro No. 999",
     city: "Yogyakarta",
@@ -93,8 +93,8 @@ const mockUMKMs = [
     website: "https://batiknusantara.com",
     owner: "Slamet Riyanto",
     rating: 4.9,
-    reviews: 312
-  }
+    reviews: 312,
+  },
 ];
 
 // Filter mock data
@@ -102,16 +102,19 @@ function filterMockData(category, city, search) {
   let filtered = mockUMKMs;
 
   if (category && category !== "Semua") {
-    filtered = filtered.filter(u => u.category === category);
+    filtered = filtered.filter((u) => u.category === category);
   }
   if (city) {
-    filtered = filtered.filter(u => u.city.toLowerCase().includes(city.toLowerCase()));
+    filtered = filtered.filter((u) =>
+      u.city.toLowerCase().includes(city.toLowerCase()),
+    );
   }
   if (search) {
     const searchLower = search.toLowerCase();
-    filtered = filtered.filter(u => 
-      u.name.toLowerCase().includes(searchLower) || 
-      u.description.toLowerCase().includes(searchLower)
+    filtered = filtered.filter(
+      (u) =>
+        u.name.toLowerCase().includes(searchLower) ||
+        u.description.toLowerCase().includes(searchLower),
     );
   }
 
