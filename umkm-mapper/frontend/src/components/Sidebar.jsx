@@ -99,7 +99,9 @@ const Sidebar = ({
               >
                 {categories.map((category) => (
                   <option key={category} value={category}>
-                    {category}
+                    {isMobile && category === "Semua"
+                      ? "Semua Kategori"
+                      : category}
                   </option>
                 ))}
               </select>
