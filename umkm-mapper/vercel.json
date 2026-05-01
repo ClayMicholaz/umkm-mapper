@@ -1,14 +1,7 @@
 {
   "version": 2,
-  "installCommand": "npm install",
-  "buildCommand": "npm run build --workspace=frontend",
+  "buildCommand": "npm install && npm run build --workspace=frontend",
   "outputDirectory": "frontend/dist",
-  "functions": {
-    "api/[...all].js": {
-      "runtime": "nodejs18.x",
-      "includeFiles": "backend/**"
-    }
-  },
   "rewrites": [
     {
       "source": "/api/(.*)",
