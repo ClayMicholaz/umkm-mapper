@@ -94,6 +94,7 @@ const Sidebar = ({
               <select
                 className="category-select"
                 value={selectedCategory}
+                aria-label="Kategori"
                 onChange={(e) => onCategoryChange(e.target.value)}
               >
                 {categories.map((category) => (
@@ -128,6 +129,7 @@ const Sidebar = ({
             <input
               type="text"
               value={citySearch}
+              aria-label="Kota"
               onChange={handleCityInputChange}
               onFocus={() => setCityDropdownOpen(true)}
               placeholder="Pilih Kota"

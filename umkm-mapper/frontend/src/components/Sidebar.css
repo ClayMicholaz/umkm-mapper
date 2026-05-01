@@ -185,6 +185,11 @@
     margin-bottom: 16px;
   }
 
+  /* hide labels above inputs on mobile; placeholders/aria-labels used instead */
+  .filter-group h3 {
+    display: none;
+  }
+
   .category-select {
     font-size: 13px;
     padding: 11px 38px 11px 12px;
