@@ -1,5 +1,10 @@
 {
   "version": 2,
+  "functions": {
+    "api/[...all].js": {
+      "runtime": "nodejs20.x"
+    }
+  },
   "buildCommand": "cd frontend && NPM_CONFIG_PRODUCTION=false npm install --legacy-peer-deps && npm run build",
   "outputDirectory": "frontend/dist",
   "rewrites": [
