@@ -12,6 +12,7 @@ const Sidebar = ({
 }) => {
   const [citySearch, setCitySearch] = useState(selectedCity);
   const [cityDropdownOpen, setCityDropdownOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const citySearchRef = useRef(null);
 
   const cities = [
@@ -67,26 +68,57 @@ const Sidebar = ({
     };
   }, []);
 
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 768px)");
+
+    const handleViewportChange = () => {
+      setIsMobile(mobileQuery.matches);
+    };
+
+    handleViewportChange();
+    mobileQuery.addEventListener("change", handleViewportChange);
+
+    return () => {
+      mobileQuery.removeEventListener("change", handleViewportChange);
+    };
+  }, []);
+
   return (
     <div className="sidebar">
       <div className="sidebar-content">
         {/* Category Filter */}
         <div className="filter-group">
           <h3>Kategori</h3>
-          <div className="category-list">
-            {categories.map((category) => (
-              <label key={category} className="category-option">
-                <input
-                  type="radio"
-                  name="category"
-                  value={category}
-                  checked={selectedCategory === category}
-                  onChange={(e) => onCategoryChange(e.target.value)}
-                />
-                <span>{category}</span>
-              </label>
-            ))}
-          </div>
+          {isMobile ? (
+            <div className="category-select-wrapper">
+              <select
+                className="category-select"
+                value={selectedCategory}
+                onChange={(e) => onCategoryChange(e.target.value)}
+              >
+                {categories.map((category) => (
+                  <option key={category} value={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
+            </div>
+          ) : (
+            <div className="category-list">
+              {categories.map((category) => (
+                <label key={category} className="category-option">
+                  <input
+                    type="radio"
+                    name="category"
+                    value={category}
+                    checked={selectedCategory === category}
+                    onChange={(e) => onCategoryChange(e.target.value)}
+                  />
+                  <span>{category}</span>
+                </label>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* City Filter */}

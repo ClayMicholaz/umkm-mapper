@@ -54,14 +54,21 @@
 
 @media (max-width: 768px) {
   .map-header {
-    padding: 15px;
+    padding: 12px 14px 14px;
   }
 
   .header-content h1 {
-    font-size: 22px;
+    font-size: 19px;
+    line-height: 1.15;
+  }
+
+  .header-content p {
+    font-size: 11px;
   }
 
   .search-input {
     max-width: 100%;
+    padding: 11px 14px;
+    font-size: 13px;
   }
 }
