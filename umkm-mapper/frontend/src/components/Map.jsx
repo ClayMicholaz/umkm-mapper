@@ -120,6 +120,12 @@ const Map = () => {
                   <p>
                     <strong>Kota:</strong> {umkm.city}
                   </p>
+                  {umkm.rating !== undefined && (
+                    <p>
+                      <strong>Rating:</strong> {umkm.rating}{" "}
+                      {umkm.reviews !== undefined && `(${umkm.reviews} ulasan)`}
+                    </p>
+                  )}
                   {umkm.phone && (
                     <p>
                       <strong>Telepon:</strong> {umkm.phone}
